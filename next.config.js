@@ -26,6 +26,16 @@ function scanSubdirectories(directory) {
 
   return subdirectories
 }
+
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  experimental: {
+    appDir: true,
+  },
+}
+
+module.exports = nextConfig
+
 // 扫描项目 /themes下的目录名
 const themes = scanSubdirectories(path.resolve(__dirname, 'themes'))
 module.exports = withBundleAnalyzer({
